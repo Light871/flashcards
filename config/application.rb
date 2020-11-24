@@ -17,3 +17,7 @@ module Flashcards
     # the framework and any gems in your application.
   end
 end
+
+config.generators do |g|
+  g.template_engine :haml
+end
