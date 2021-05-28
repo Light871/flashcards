@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: flashcards
+  password: 12345678
+
+development:
+  <<: *default
+  database: flashcards_development
+
+  
+test:
+  <<: *default
+  database: flashcards_test
+
+
+production:
+  <<: *default
+  database: flashcards_production
+  username: flashcards
+  password: <%= ENV['FK_DATABASE_PASSWORD'] %>
