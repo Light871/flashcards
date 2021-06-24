@@ -20,6 +20,10 @@ class CardsController < ApplicationController
     end
   end
 
+  def edit
+    @card = Card.find(params[:id])
+  end
+
   private
 
   def card_params
