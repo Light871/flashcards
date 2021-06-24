@@ -6,6 +6,16 @@ class CardsController < ApplicationController
   def new
   end
 
+  def create
+    @card = Card.new(card_params)
+
+    if @card.save
+      redirect_to @card
+    else
+      render action: 'new'
+    end
+  end
+
   private
 
   def card_params
