@@ -7,7 +7,9 @@ class CardsController < ApplicationController
     @card = Card.find(params[:id])
   end
 
-  def new; end
+  def new
+    @card = Card.new
+  end
 
   def create
     @card = Card.new(card_params)
