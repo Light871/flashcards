@@ -2,12 +2,12 @@ require 'rubygems'
 require 'nokogiri'
 require 'open-uri'
 
-class GetWords
+class Parser
   def initialize
     @page = Nokogiri::HTML(open("http://1000mostcommonwords.com/1000-most-common-german-words/"))
   end
 
-  def parser
+  def parse
     result = []
 
     2.upto(1001) do |n|

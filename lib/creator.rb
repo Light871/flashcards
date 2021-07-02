@@ -1,10 +1,10 @@
-require 'get_words'
+require 'parser'
 require 'card_writer'
 
 class Creator
   def db_seed
-    reader = GetWords.new
-    dictionary = reader.parser
+    parser = Parser.new
+    dictionary = parser.parse
 
     writer = CardWriter.new(dictionary)
     writer.create_cards
