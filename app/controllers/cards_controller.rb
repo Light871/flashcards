@@ -12,7 +12,7 @@ class CardsController < ApplicationController
     @card = Card.new
   end
 
-def create
+  def create
     @card = CardCreateService.new(card_params).create_cards
 
     if @card.save
