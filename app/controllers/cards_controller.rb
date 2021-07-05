@@ -1,3 +1,4 @@
+require 'card_create_service'
 class CardsController < ApplicationController
   before_action :init_card, only: %i[show edit update destroy]
 
@@ -11,8 +12,8 @@ class CardsController < ApplicationController
     @card = Card.new
   end
 
-  def create
-    @card = Card.new(card_params)
+def create
+    @card = CardCreateService.new(card_params).create_cards
 
     if @card.save
       redirect_to @card
