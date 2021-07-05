@@ -1,4 +1,4 @@
-require 'creator'
+require 'seeder'
 
-creator = Creator.new
-creator.db_seed
+seeder = Seeder.new
+seeder.db_seed
