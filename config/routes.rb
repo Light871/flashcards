@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  root 'cards#review'
+  root 'card_reviews#new'
 
   resources :cards do
-    collection do
-      get 'review'
-    end
+    resources :card_reviews, only: [:new, :create]
   end
 end
