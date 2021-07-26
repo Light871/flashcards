@@ -1,12 +1,12 @@
-%p{:style => "font-size: 22px;"}
+%p{ :style => "font-size: 22px;" }
   = t :about
 
--flash.each do |name, msg|
+- flash.each do |name, msg|
   = content_tag :div, msg, class: name
 
--if @card
+- if @card
   %p
-    =@card.original_text
+    = @card.original_text
   = simple_form_for @card, method: :post, url: card_card_reviews_path(@card) do |f|
     = f.input :translated_text, label: "#{t :input_translate}:", input_html: { value: '' }
     = f.button :submit, "#{t :check}"
