@@ -38,10 +38,6 @@ class CardsController < ApplicationController
     redirect_to cards_path
   end
 
-  def review
-    @card = Card.review_ready.first
-  end
-
   private
 
   def init_card
