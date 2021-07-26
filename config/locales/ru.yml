@@ -7,3 +7,5 @@ ru:
   original: "Слово"
   translate: "Перевод"
   review: "Дата пересмотра"
+  check: "Проверить"
+  input_translate: "Введите перевод"
