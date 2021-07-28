@@ -1,3 +1,4 @@
+require 'card_check_service'
 class CardReviewsController < ApplicationController
   def new
     @card = Card.review_ready.first
@@ -5,8 +6,8 @@ class CardReviewsController < ApplicationController
 
   def create
     @card = Card.find(params[:card_id])
-    if @card.translated_text.casecmp?(card_params[:translated_text])
-      @card.update(review_date: Date.today + 3)
+    @card_check = CardCheckService.new(card: @card, translate: card_params[:translated_text])
+    if @card_check.is_translate_right?
       flash[:notice] = "Правильно!"
     else
       flash[:notice] = "Неправильно! Попробуй еще одну!"
