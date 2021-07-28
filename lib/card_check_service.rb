@@ -4,7 +4,7 @@ class CardCheckService
     @translate = translate
   end
 
-  def is_translate_right?
+  def translate_right?
     if @card.translated_text.casecmp?(@translate)
       @card.update(review_date: Date.today + 3)
       true

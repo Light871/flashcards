@@ -7,7 +7,7 @@ class CardReviewsController < ApplicationController
   def create
     @card = Card.find(params[:card_id])
     @card_check = CardCheckService.new(card: @card, translate: card_params[:translated_text])
-    if @card_check.is_translate_right?
+    if @card_check.translate_right?
       flash[:notice] = "Правильно!"
     else
       flash[:notice] = "Неправильно! Попробуй еще одну!"
